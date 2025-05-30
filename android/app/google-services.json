@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "618772577889",
+    "project_id": "aquazen-a44c3",
+    "storage_bucket": "aquazen-a44c3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618772577889:android:89060f13fbcdcf701f3420",
+        "android_client_info": {
+          "package_name": "com.example.aquazenfix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJYE6cAf9mEtWkJb6glzO6VPIxcR1vqvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
