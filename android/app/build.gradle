@@ -1,0 +1,41 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services' // FlutterFire
+    id 'dev.flutter.flutter-gradle-plugin'
+    id 'kotlin-android'
+}
+
+android {
+    namespace "com.example.aquazenfix"
+    compileSdk 35
+    ndkVersion "27.0.12077973"
+
+    defaultConfig {
+        applicationId "com.example.aquazenfix"
+        minSdk 23
+        targetSdk 34
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+        coreLibraryDesugaringEnabled true
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:1.10.1"
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.0.4"
+}

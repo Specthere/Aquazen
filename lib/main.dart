@@ -1,5 +1,6 @@
 import 'package:aquazenfix/model/ph_model.dart';
 import 'package:aquazenfix/service/mqtt_service.dart';
+import 'package:aquazenfix/service/notification_service.dart'; // ✅ Tambahkan ini
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,13 @@ Future<void> main() async {
     print("Firebase initialization error: $e");
   }
 
+  try {
+    await NotificationService.init(); // ✅ Inisialisasi notifikasi
+    print("Notification service initialized");
+  } catch (e) {
+    print("Notification initialization error: $e");
+  }
+
   runApp(
     MultiProvider(
       providers: [
@@ -34,7 +42,6 @@ Future<void> main() async {
         ChangeNotifierProvider(
           create: (_) => PhController(PhModel(), MqttService()),
         ),
-        // Tambahkan controller lainnya kalau ada
       ],
       child: const MyApp(),
     ),
