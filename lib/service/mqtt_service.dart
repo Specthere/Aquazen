@@ -5,10 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 
 class MqttService {
-  final _client = MqttServerClient(
-    '192.168.70.129',
-    'flutter_client',
-  );
+  final _client = MqttServerClient('192.168.144.129', 'flutter_client');
 
   final topic = 'esp32/sensor';
   final statusTopic = 'esp32/relay';
@@ -27,9 +24,10 @@ class MqttService {
     _client.onSubscribed = (t) => print('Subscribed to $t');
     _client.logging(on: false);
 
-    final connMessage = MqttConnectMessage()
-        .withClientIdentifier('flutter_client')
-        .startClean();
+    final connMessage =
+        MqttConnectMessage()
+            .withClientIdentifier('flutter_client')
+            .startClean();
 
     _client.connectionMessage = connMessage;
 
